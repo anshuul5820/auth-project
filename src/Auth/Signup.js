@@ -1,9 +1,8 @@
-import { v4 as uuidv4 } from 'uuid';
 import { Button } from '../styles/button';
 import { Input } from '../styles/input';
 import { API } from '../url';
 
-const AuthBox = () => {
+const Signup = ({ setAuthenticated }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formDetails = {
@@ -19,7 +18,7 @@ const AuthBox = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formDetails),
       });
-      response.status.match(/20[01] OK/) && console.log('hello');
+      response.status.match(/20[01] OK/) && setAuthenticated(true);
     } catch (err) {
       console.log('', err);
     }
@@ -45,4 +44,4 @@ const AuthBox = () => {
   );
 };
 
-export default AuthBox;
+export default Signup;
