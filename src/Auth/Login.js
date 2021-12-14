@@ -31,13 +31,13 @@ const Login = ({ setAuthenticated }) => {
     <div className='center'>
       <form onSubmit={handleSubmit} className='auth-form'>
         <h3>Login</h3>
-        <label htmlFor='phno'>Phone number here</label>
+        <label htmlFor='text'>Phone\Email</label>
         <Input type='tel' id='phno' />
-        <label htmlFor='password'>Password here</label>
+        <label htmlFor='password'>Password</label>
         <Input type='password' id='password' />
         <Button type='submit'>Submit</Button>
       </form>
-      <NavLink to='/signup'>Not signed in?</NavLink>
+      <NavLink to='/signup'>Register</NavLink>
     </div>
   );
 };

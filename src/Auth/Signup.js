@@ -32,15 +32,15 @@ const Signup = ({ setAuthenticated }) => {
     <div className='center'>
       <form onSubmit={handleSubmit} className='auth-form'>
         <h3>Sign up</h3>
-        <label htmlFor='name'>Name here</label>
+        <label htmlFor='name'>Name</label>
         <Input type='text' id='name' />
-        <label htmlFor='email'>Email here</label>
+        <label htmlFor='email'>Email</label>
         <Input type='email' id='email' />
-        <label htmlFor='phno'>Phone number here</label>
+        <label htmlFor='phno'>Phone number</label>
         <Input type='tel' id='phno' />
-        <label htmlFor='password'>Password here</label>
+        <label htmlFor='password'>Password</label>
         <Input type='password' id='password' />
-        <label htmlFor='dob'>Date of birth here</label>
+        <label htmlFor='dob'>Date of birth</label>
         <Input type='date' id='dob' />
         <Button type='submit'>Submit</Button>
       </form>
