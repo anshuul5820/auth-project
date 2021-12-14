@@ -9,7 +9,8 @@ const AuthBox = () => {
       name: e.target[0].value,
       email: e.target[1].value,
       phno: e.target[2].value,
-      dob: e.target[3].value,
+      password: e.target[3].value,
+      dob: e.target[4].value,
     };
     try {
       window.localStorage.setItem(
@@ -31,6 +32,8 @@ const AuthBox = () => {
         <Input type='email' id='email' />
         <label htmlFor='phno'>Phone number here</label>
         <Input type='tel' id='phno' />
+        <label htmlFor='password'>Password here</label>
+        <Input type='password' id='password' />
         <label htmlFor='dob'>Date of birth here</label>
         <Input type='date' id='dob' />
         <Button type='submit'>Submit</Button>
