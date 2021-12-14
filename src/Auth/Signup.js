@@ -1,3 +1,4 @@
+import { Navigate } from 'react-router-dom';
 import { Button } from '../styles/button';
 import { Input } from '../styles/input';
 import { API } from '../url';
@@ -13,12 +14,15 @@ const Signup = ({ setAuthenticated }) => {
       dob: e.target[4].value,
     };
     try {
-      const response = fetch(`${API}/register`, {
+      const response = await fetch(`${API}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formDetails),
       });
-      response.status.match(/20[01] OK/) && setAuthenticated(true);
+      if (response.status.match(/20[01]/)) {
+        setAuthenticated(true);
+        Navigate('/home');
+      }
     } catch (err) {
       console.log('', err);
     }

@@ -1,8 +1,10 @@
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Button } from '../styles/button';
 import { Input } from '../styles/input';
 import { API } from '../url';
 
 const Login = ({ setAuthenticated }) => {
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formDetails = {
@@ -10,14 +12,18 @@ const Login = ({ setAuthenticated }) => {
       password: e.target[1].value,
     };
     try {
-      const response = fetch(`${API}/signin`, {
+      const response = await fetch(`${API}/signin`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formDetails),
       });
-      response.status.match(/20[01] OK/) && setAuthenticated(true);
+
+      if (response.status === 200) {
+        setAuthenticated(true);
+        navigate('/home');
+      }
     } catch (err) {
-      console.log('', err);
+      navigate('/signup');
     }
   };
 
@@ -31,6 +37,7 @@ const Login = ({ setAuthenticated }) => {
         <Input type='password' id='password' />
         <Button type='submit'>Submit</Button>
       </form>
+      <NavLink to='/signup'>Not signed in?</NavLink>
     </div>
   );
 };
