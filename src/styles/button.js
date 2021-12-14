@@ -9,4 +9,8 @@ export const Button = styled.button`
   font-weight: bold;
   font-size: 1.2rem;
   padding: 5px 1rem;
+  transition: all 0.2s;
+  &: active {
+    transform: translate(-1.4px, 2px);
+  }
 `;

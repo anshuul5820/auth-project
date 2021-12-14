@@ -26,6 +26,16 @@ body {
   flex-direction: column;
 }
 
-.auth-form input {
+.auth-form input,
+h3 {
   margin: 3px 0 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+button {
+  align-self: flex-end;
 }
