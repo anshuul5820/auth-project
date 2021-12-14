@@ -1,3 +1,9 @@
+import AuthBox from './Auth/AuthBox';
+
 export const App = () => {
-  return <div>hello</div>;
+  return (
+    <div className='home'>
+      <AuthBox />
+    </div>
+  );
 };
