@@ -1,22 +1,25 @@
 import { v4 as uuidv4 } from 'uuid';
 import { Button } from '../styles/button';
 import { Input } from '../styles/input';
+import { API } from '../url';
 
 const AuthBox = () => {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formDetails = {
       name: e.target[0].value,
       email: e.target[1].value,
-      phno: e.target[2].value,
+      phone: e.target[2].value,
       password: e.target[3].value,
       dob: e.target[4].value,
     };
     try {
-      window.localStorage.setItem(
-        `user__${uuidv4()}`,
-        JSON.stringify(formDetails)
-      );
+      const response = fetch(`${API}/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formDetails),
+      });
+      response.status.match(/20[01] OK/) && console.log('hello');
     } catch (err) {
       console.log('', err);
     }
