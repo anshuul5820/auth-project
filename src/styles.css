@@ -1,8 +1,11 @@
 .home {
-  background: rgb(16, 149, 4);
+  background: rgb(85 235 188 / 62%);
   width: 100%;
   height: 100vh;
   position: relative;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -21,4 +24,8 @@
 .auth-form {
   display: flex;
   flex-direction: column;
+}
+
+.auth-form input {
+  margin: 3px 0 1rem;
 }

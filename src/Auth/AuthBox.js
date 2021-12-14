@@ -1,4 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
+import { Button } from '../styles/button';
+import { Input } from '../styles/input';
 
 const AuthBox = () => {
   const handleSubmit = (e) => {
@@ -24,14 +26,14 @@ const AuthBox = () => {
       <form onSubmit={handleSubmit} className='auth-form'>
         <h3>Sign up</h3>
         <label htmlFor='name'>Name here</label>
-        <input type='text' id='name' />
+        <Input type='text' id='name' />
         <label htmlFor='email'>Email here</label>
-        <input type='email' id='email' />
+        <Input type='email' id='email' />
         <label htmlFor='phno'>Phone number here</label>
-        <input type='tel' id='phno' />
+        <Input type='tel' id='phno' />
         <label htmlFor='dob'>Date of birth here</label>
-        <input type='date' id='dob' />
-        <button type='submit'>Submit</button>
+        <Input type='date' id='dob' />
+        <Button type='submit'>Submit</Button>
       </form>
     </div>
   );
